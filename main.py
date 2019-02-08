@@ -13,7 +13,7 @@ def home():
     event_str = ""
     for event in events:
         event_str += "<h3>" + event + "</h3>"
-    return event_str + "<a href='/create'>create</a>"
+    return event_str + "<a href='/create'>Create Even</a>"
 
 
 @app.route("/create")

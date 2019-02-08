@@ -52,7 +52,6 @@ def get_events():
         start = event['start'].get('dateTime').replace("T", " ")
         end = event['end'].get('dateTime').replace("T", " ")
         summary = event['summary']
-        print(type(start))
         event_str = "Event {0} starts at {1}, ends at {2}".format(summary, start, end)
         event_records.append(event_str)
 
@@ -112,8 +111,6 @@ def create_event():
             ],
         },
     }
-    print("asdasd")
 
     event = service.events().insert(calendarId='primary', body=event).execute()
-    print("asdasd")
     print('Event created: %s' % (event.get('htmlLink')))
